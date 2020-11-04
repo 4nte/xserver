@@ -7,7 +7,7 @@ FROM debian:jessie
 
 # "gtk2-engines-pixbuf" is to make "icewm" icon display OK.
 RUN apt-get update && apt-get install -y --no-install-recommends xvfb xauth x11vnc x11-utils x11-xserver-utils gtk2-engines-pixbuf icewm
-
+RUN apt-get install -y --no-install-recommends libgl1-mesa-glx xorg
 # In the future, if you have more fancy requirements, you can consider install full "xorg" package as follows:
 # RUN apt-get update && apt-get install -y --no-install-recommends xvfb xauth x11vnc x11-utils x11-xserver-utils xorg icewm
 

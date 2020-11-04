@@ -28,7 +28,7 @@ mcookie | sed -e "$PTN" | xauth -q
 xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f /Xauthority/xserver.xauth nmerge -
 
 # now boot X-Server, tell it to our cookie and give it sometime to start up
-Xvfb $DISPLAY -auth ${HOME}/.Xauthority -dpi $SCREEN_DPI -screen ${DISPLAY:1:1} $SCREEN_SIZE > /dev/null &
+Xvfb $DISPLAY -auth ${HOME}/.Xauthority +extension GLX +extension RANDR -dpi $SCREEN_DPI -screen ${DISPLAY:1:1} $SCREEN_SIZE > /dev/null &
 sleep 3
 
 
